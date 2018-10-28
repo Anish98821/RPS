@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style>
+button {
+    margin-top:10px;
+    float:center;
+    height:100px;
+    width:100px;
+}
+ </style>
+ <script>
+
+//Welcome to Rock Paper Scissors
+
+r = ["rock" , "scissors", "paper"]
+p = ["paper", "rock", "scissors"]
+s = ["scissors", "paper", "rock"]
+
+/*The order of the elements of these lists are not random.
+The first element is the objct itself
+The second elements contains the object that the element can be beaten
+by the object.
+The last element contains the object that can beat the object*/
+
+objects = [r,p,s]
+user = 0
+
+alert("Welcome to Rock-Paper-Scissors")
+function main(){
+		x = document.getElementById("result")
+        compChoice = objects[Math.floor(Math.random() * objects.length)]
+        if (user == compChoice[1]){    
+            x.style = "color:red"
+            x.innerHTML= "You chose "+user+". Computer chose "+compChoice[0]+". YOU LOOSE!"
+        }    
+        else if (user == compChoice[2]){
+			x.style = "color:green"
+            x.innerHTML="You chose "+user+". Computer chose "+compChoice[0]+". YOU WIN!"
+        }    
+        else if (user == compChoice[0]){
+            x.style = "color:blue"
+            x.innerHTML = "You chose "+user+". Computer chose "+compChoice[0]+". ITS A DRAW!"
+        }
+        
+} 
+//Originally coded in Python by Anish U.
+//Visit gist.github.com/anish98821 for more such codes in Python
+
+</script>
+        <title>Rock-Paper-Scissors</title>
+        <p align = 'center'>
+        <b>Rock - Paper - Scissors!!<br>
+        Choose your object!!</b>
+        </p>
+    </head>
+    <body>
+		<p id = "result" align = "center" style = "">
+		</p>
+
+        <div align = 'center'>
+            <img src ="rockcropped.png" 
+            height="100px" onclick="user = 'rock',main()"> <br>
+            <img src = "papercropped.png" 
+            height = 100px onclick="user = 'paper',main()"><br>
+            <img src = "scissorscropped.png"
+            height = 100px onclick="user = 'scissors',main()"><br>
+            
+        </div>
+    </body>
+</html>
